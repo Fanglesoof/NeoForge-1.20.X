@@ -1,3 +1,7 @@
 {
-  "item.peacemod.bismuth": "Bismut"
+  "item.peacemod.bismuth": "Bismut",
+  "item.peacemod.raw_bismuth": "Rohes Bismut",
+
+  "block.peacemod.bismuth_block": "Bismutblock",
+  "block.peacemod.bismuth_ore": "Bismuterz"
 }

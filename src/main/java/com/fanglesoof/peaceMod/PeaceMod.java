@@ -1,6 +1,8 @@
 package com.fanglesoof.peaceMod;
 
+import com.fanglesoof.peaceMod.block.ModBlocks;
 import com.fanglesoof.peaceMod.item.ModItems;
+import com.fanglesoof.peaceMod.villager.ModVillagers;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
@@ -38,6 +40,9 @@ public class PeaceMod {
         NeoForge.EVENT_BUS.register(this);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
+        ModVillagers.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
@@ -53,6 +58,12 @@ public class PeaceMod {
         // Fügt erstelltes Item (hier: "bismuth") dem Creativ-Blockmenü unter dem Tab "Ingredients" hinzu
         if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.BISMUTH);
+            event.accept(ModItems.RAW_BISMUTH);
+        }
+
+        if(event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.BISMUTH_BLOCK);
+            event.accept(ModBlocks.BISMUTH_ORE);
         }
     }
 
